@@ -1,6 +1,6 @@
 # CodingSans Backend Test Solution
 
-The main goal is to create a web application which can authenticate via JWT (Json Web Token), and serve an API to GET a list of breweries filtered by a query based on the openbrewerydb.
+a web application which can authenticate via JWT (Json Web Token), and serve an API to GET a list of breweries filtered by a query based on the openbrewerydb.
 
 The users endpoint ( `POST /users` ) adds a user to the database, 
 Example: 
