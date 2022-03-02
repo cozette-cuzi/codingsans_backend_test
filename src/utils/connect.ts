@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
-import config from "config";
+import mongoose from 'mongoose';
+import config from 'config';
 
 const connect = async () => {
-  const dbURI = config.get<string>("dbURI");
+  const dbURI = config.get<string>('dbURI');
   try {
     await mongoose.connect(dbURI);
   } catch (err) {

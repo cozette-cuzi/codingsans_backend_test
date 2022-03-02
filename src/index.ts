@@ -1,6 +1,5 @@
 import { startApp } from './app';
 
-
 const thrower = (err: unknown): void => {
   throw err;
 };
