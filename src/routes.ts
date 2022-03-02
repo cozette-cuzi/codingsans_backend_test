@@ -10,7 +10,7 @@ import { requireAuth } from './middleware/requireAuth';
 const routes = (app: Express) => {
   app.post('/users', validate(createUserSchema), createUserHandler);
   app.post('/login', validate(loginSchema), loginHandler);
-  app.get('/breweries',requireAuth , getBreweriesHandler);
+  app.get('/breweries', requireAuth, getBreweriesHandler);
 };
 
 export default routes;
