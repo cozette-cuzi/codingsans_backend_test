@@ -1,23 +1,15 @@
-import User, { UserDocument } from "../models/User";
-import { DocumentDefinition } from "mongoose";
-import { omit } from "lodash";
+import User, { UserDocument } from '../models/User';
+import { DocumentDefinition } from 'mongoose';
+import { omit } from 'lodash';
 
 export async function createUser(
-  input: DocumentDefinition<
-    Omit<UserDocument, "createdAt" | "updatedAt" | "comparePassword">
-  >
+  input: DocumentDefinition<Omit<UserDocument, 'createdAt' | 'updatedAt' | 'comparePassword'>>,
 ) {
   const user = await User.create(input);
-  return omit(user.toJSON(), "password");
+  return omit(user.toJSON(), 'password');
 }
 
-export async function validatePassword({
-  username,
-  password,
-}: {
-  usernmame: string;
-  password: string;
-}) {
+export async function validatePassword({ username, password }: { username: string; password: string }) {
   const user = await User.findOne({ username });
 
   if (!user) {
