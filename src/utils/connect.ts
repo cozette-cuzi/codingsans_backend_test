@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 import config from 'config';
 
-const connect = async () => {
+const connect = async (): Promise<typeof mongoose> => {
   const dbURI = config.get<string>('dbURI');
   try {
-    await mongoose.connect(dbURI);
+    return await mongoose.connect(dbURI);
   } catch (err) {
-    process.exit(1);
+    return process.exit(1);
   }
 };
 

@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { verifyJwt } from '../utils/jwt';
 
-const deserializeUser = (req: Request, res: Response, next: NextFunction) => {
+const deserializeUser = (req: Request, res: Response, next: NextFunction): void => {
   const bearerHeader = req.headers['authorization'];
 
   if (bearerHeader) {

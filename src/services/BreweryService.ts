@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function getBrreweries(breweriesURL: string, urlParams: any) {
+export async function getBrreweries(breweriesURL: string, urlParams: any): Promise<object | null> {
   let breweries = null;
   await axios
     .get(breweriesURL, {

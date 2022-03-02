@@ -3,7 +3,7 @@ import config from 'config';
 import { validatePassword } from '../services/UserService';
 import { signJwt } from '../utils/jwt';
 
-export async function loginHandler(req: Request, res: Response) {
+export async function loginHandler(req: Request, res: Response): Promise<object> {
   // Validate user's password
   const user = await validatePassword(req.body);
 

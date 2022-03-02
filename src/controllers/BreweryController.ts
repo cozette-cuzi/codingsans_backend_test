@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import config from 'config';
 import { getBrreweries } from '../services/BreweryService';
 
-export async function getBreweriesHandler(req: Request, res: Response) {
+export async function getBreweriesHandler(req: Request, res: Response): Promise<object> {
   const urlParams = req.query.query ? req.query : null;
   let breweriesURL = config.get<string>('breweriesURL');
   if (req.query.query) {
